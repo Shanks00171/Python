@@ -33,6 +33,7 @@ def gen():
 	password =''
 	genlis = ''	
 	try:
+		# Inside a try block because if the entry is empty there will be a ValueError with some base error
 		length = int(numEntry.get())
 	except ValueError:
 		length = 12
@@ -71,10 +72,10 @@ uval = IntVar()
 nval = IntVar()
 sval = IntVar()
 
-lCheck = Checkbutton(frame,text="Lowercase([a-z])",anchor=W,bg=color,activebackground = "red",variable=lval)
-uCheck = Checkbutton(frame,text="Uppercase([A-Z])",anchor=W,bg=color,activebackground = "red",variable=uval)
-nCheck = Checkbutton(frame,text="Numbers([0,9])",anchor=W,bg=color,activebackground = "red",variable=nval)
-sCheck = Checkbutton(frame,text="Special Charecters([!,@,#,$,%,^,&,*... etc])",anchor=W,bg=color,activebackground = "red",variable=sval)
+lCheck = Checkbutton(frame,text="Lowercase([a-z])",anchor=W,bg=color,selectcolor='white',activebackground = "red",variable=lval)
+uCheck = Checkbutton(frame,text="Uppercase([A-Z])",anchor=W,bg=color,selectcolor='white',activebackground = "red",variable=uval)
+nCheck = Checkbutton(frame,text="Numbers([0,9])",anchor=W,bg=color,selectcolor='white',activebackground = "red",variable=nval)
+sCheck = Checkbutton(frame,text="Special Charecters([!,@,#,$,%,^,&,*... etc])",selectcolor='white',anchor=W,bg=color,activebackground = "red",variable=sval)
 
 
 lCheck.grid(row=0,column=0)
@@ -84,15 +85,15 @@ sCheck.grid(row=1,column=1,sticky=W+E)
 
 
 inputFrame = LabelFrame(root,text="Input the length of the password",bg=color,fg = 'cyan')
-inputFrame.pack(padx=70,pady=10,anchor=W)
+inputFrame.pack(padx=70,pady=10,ipadx=69)
 
 numEntry = Entry(inputFrame)
-numEntry.grid(row=0,column=0,padx=10,pady=5)
+numEntry.grid(row=0,column=0,padx=15,pady=5)
 
 button = Button(inputFrame,text = "Generate",anchor=W,bg='black',fg='white',activebackground='red',command=gen)
 button.grid(row=0,column=1,padx=10,pady=5)
 
 label = Entry(root,justify=CENTER,width=59)
-label.pack(padx=10)
+label.pack(padx=10,pady=20)
 
 mainloop()
