@@ -1,5 +1,5 @@
 # Python
-<center><h1>Various Different and Simple Applications in Python</h1></center>
+<center><h3>Various Different and Simple Applications in Python</h3></center>
 
 <ul>
 <li>[24/05/2021] - Simple GUI Password Generator using Tkinter</li>
